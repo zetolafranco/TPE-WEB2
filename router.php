@@ -1,15 +1,13 @@
 <?php
-switch ($variable) {
-    case 'createPlayer':
-        # code...
+switch ($jugador) {
+    case 'crearJugador':
         break;
-    case 'updatePlayer':
+    case 'modificarJugador':
         break;
-    case 'deletePlayer':
+    case 'eliminarJugador':
         break;
-    case 'viewPlayers':
+    case 'datosJugador':
         break;    
     default:
-        # code...
         break;
 }
