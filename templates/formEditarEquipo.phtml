@@ -1,0 +1,46 @@
+<?php require_once 'templates/header.phtml'?>
+
+<h2 class="p-1">Editar Equipo</h2>
+<form action="editar equipo" method="POST" class="my-4" <?= $equipo->id_equipo ?>>
+    <div class="row">
+        <div class="col-9">
+            <div class="form-group">
+                <label>Nombre</label>
+                <input required name="nombre" type="text" class="form-control" <?= $equipo->nombre ?>>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>Pais</label>
+                <input required name="pais" type="text" class="form-control" <?= $equipo->pais ?>>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>Fundacion</label>
+                <input required name="fundacion" type="date" class="form-control" <?= $equipo->fundacion ?>>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>Estadio</label>
+                <input required name="estadio" type="text" class="form-control" <?= $equipo->estadio ?>>
+            </div>
+        </div>
+
+        <div class="col-9">
+            <div class="form-group">
+                <label>Entrenador</label>
+                <input required name="entrenador" type="text" class="form-control" <?= $equipo->entrenador ?>>
+            </div>
+        </div>
+    </div>
+
+    <button type="submit" class="btn btn-primary mt-2">Editar</button>
+</form>
+<a href="equiposList.phtml" class="btn btn-primary">Atras</a>  
+
+<?php require_once 'templates/footer.phtml'?>

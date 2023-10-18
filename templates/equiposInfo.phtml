@@ -1,0 +1,20 @@
+<?php require 'templates/header.phtml' ?>
+
+<h2>Equipo</h2>
+<div class="container mt-4">
+    <div class="card">
+        <div class="card-header">
+            <h5 class="card-title"><?= $equipo->nombre ?></h5>
+        </div>
+        <ul class="list-group">
+    <li class="list-group-item">Id: <?= $equipo->id_equipo ?></li>
+    <li class="list-group-item">Pais: <?= $equipo->pais ?></li>
+    <li class="list-group-item">Fundacion: <?= $equipo->fundacion ?></li>
+    <li class="list-group-item">Estadio: <?= $equipo->estadio ?></li>
+    <li class="list-group-item">Entrenador: <?= $equipo->entrenador ?></li>
+    </ul>
+    </div>
+    <a href="jugadoresInfo.phtml" class="btn btn-primary">Atras</a>
+</div>
+
+<?php require 'templates/footer.phtml' ?>
