@@ -2,8 +2,8 @@
 require 'templates/form_alta.phtml'; ?>
 
 <div class="d-grid gap-2 col-6 mx-auto">
-  <?php if (isset($_SESSION['Id_usuario'])) : ?>
-    <a href="<?php echo BASE_URL . 'form_jugador.phtml/'; ?>" class="btn btn-success btn-sm">Agregar Jugador</a>
+  <?php if (isset($_SESSION['USER_ID'])) : ?>
+    <a href="<?php echo BASE_URL . 'form_jugador/'; ?>" class="btn btn-success btn-sm">Agregar Jugador</a>
     <?php endif ?>
 </div>
 

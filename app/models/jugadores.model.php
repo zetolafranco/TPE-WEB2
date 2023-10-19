@@ -1,5 +1,5 @@
 <?php
-require_once './config.php';
+
 require_once './app/models/model.php';
 class JugadoresModel {
     private $db;

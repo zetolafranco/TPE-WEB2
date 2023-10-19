@@ -4,7 +4,7 @@ require_once './config.php';
         protected $db;
 
         function __construct() {
-            $this->db = new PDO('mysql:host=localhost;dbname=tp-web2;charset=utf8', 'root', '');
+            $this->db = new PDO('mysql:host=localhost;dbname=tpe-web2;charset=utf8mb4', 'root', '');
             $this->deploy();
         }
 
