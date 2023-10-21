@@ -13,7 +13,7 @@ class EquiposModel {
      * Obtiene y devuelve de la base de datos todas las tareas.
      */
     function getEquipos() {
-        $query = $this->db->prepare('SELECT * FROM clubes');
+        $query = $this->db->prepare('SELECT * FROM equipos');
         $query->execute();
 
         // $tasks es un arreglo de tareas

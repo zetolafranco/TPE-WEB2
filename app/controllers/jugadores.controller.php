@@ -2,6 +2,7 @@
 require_once './app/models/jugadores.model.php';
 require_once './app/views/jugadores.view.php';
 require_once './helpers/auth.helper.php';
+require_once './models/equipos.model.php';
 
 class JugadoresController {
     private $model;
@@ -50,7 +51,7 @@ class JugadoresController {
     function removeJugador($id) {
         AuthHelper::verify();
         $this->model->deleteJugador($id);
-        header('Location: ' . BASE_URL);
+        header('Location: ' . '/jugadoresList');
     }
     
     public function formEditarJugador($id) {
