@@ -10,13 +10,13 @@ class EquiposModel {
     }
 
     /**
-     * Obtiene y devuelve de la base de datos todas las tareas.
+     * Obtiene y devuelve de la base de datos todos los equipos.
      */
     function getEquipos() {
         $query = $this->db->prepare('SELECT * FROM equipos');
         $query->execute();
 
-        // $tasks es un arreglo de tareas
+        // $equipos es un arreglo de equipos
         $equipos = $query->fetchAll(PDO::FETCH_OBJ);
 
         return $equipos;

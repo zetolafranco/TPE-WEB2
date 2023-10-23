@@ -45,7 +45,7 @@ class JugadoresModel {
    }
 
    function editarJugador($id, $Nombre, $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo){
-    $query = $this->db->prepare('UPDATE equipos SET nombre = ?, Fecha_de_nacimiento = ?, Nacionalidad = ?, Posicion = ?, id_equipo = ? WHERE id_jugador = ?');    
+    $query = $this->db->prepare('UPDATE jugadores SET nombre = ?, Fecha_de_nacimiento = ?, Nacionalidad = ?, Posicion = ?, id_equipo = ? WHERE id_jugador = ?');    
     $query->execute([$Nombre,  $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo, $id]);
    }
 
