@@ -1,7 +1,7 @@
 <?php
 
 class JugadoresView {
-        public function showJugadores($jugadores, $equipos){
+    public function showJugadores($jugadores, $equipos){
         require_once './templates/jugadoresList.phtml';
     }
 
@@ -10,10 +10,11 @@ class JugadoresView {
     }
 
     function formEditarJugador($jugador, $equipos){
-        require_once './formEditarEquipo.phtml';
+        require_once './templates/formEditarEquipo.phtml';
     }
 
     public function showError($error) {
-        require 'templates/error.phtml';
+        require './templates/error.phtml';
     }
 }
+?>

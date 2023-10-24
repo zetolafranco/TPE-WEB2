@@ -1,6 +1,6 @@
-<?php
-require_once './config.php';
-    class Model {
+<?php require_once "./app/config/config.php";
+
+    class DbModel {
         protected $db;
 
         function __construct() {

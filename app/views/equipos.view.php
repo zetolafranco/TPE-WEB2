@@ -1,5 +1,4 @@
 <?php
-require_once './templates/header.phtml';  
 class EquiposView {    
     function showEquipos($equipos){
         require_once './templates/equiposList.phtml';
@@ -14,4 +13,4 @@ class EquiposView {
         require_once './templates/error.phtml';
     }
 }
-require_once './templates/footer.phtml';  
+?>

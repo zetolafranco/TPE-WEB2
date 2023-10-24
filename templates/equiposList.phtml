@@ -1,11 +1,11 @@
-<?php require 'templates/header.phtml' ?>
+<?php require_once 'templates/header.phtml' ?>
 
-<?php require 'templates/form_alta.phtml' ?>
+<?php require 'templates/form_equipo.phtml' ?>
 
 <ul class="list-group">
 <div class="col-md-7 order-md-2">
 <?php foreach($equipos as $equipo): ?>
-    <h2 class="nombre-equipo"><?= $equipo->nombre ?></h2>
+    <h2 class="nombre"><?= $equipo->nombre ?></h2>
     <a href="<?php echo BASE_URL . 'equipo/' . $equipo->id_equipo; ?>" class="btn btn-primary btn-sm">Ver Detalle</a>
     <?php if (isset($_SESSION['USER_ID'])) : ?>
               <a href="deleteEquipo/<?= $equipo->id_equipo ?>" class='btn btn-danger ml-auto'>Borrar</a>

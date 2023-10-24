@@ -1,5 +1,5 @@
-<?php require 'templates/header.phtml';
-require 'templates/form_alta.phtml'; ?>
+<?php require_once 'templates/header.phtml';
+require 'templates/form_jugador.phtml'; ?>
 
 <div class="d-grid gap-2 col-6 mx-auto">
   <?php if (isset($_SESSION['USER_ID'])) : ?>
@@ -21,4 +21,4 @@ require 'templates/form_alta.phtml'; ?>
 <?php endforeach ?>
 </ul>
 
-<?php require 'templates/footer.phtml' ?>
+<?php require_once 'templates/footer.phtml' ?>

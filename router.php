@@ -4,14 +4,11 @@ require_once './app/controllers/equipos.controller.php';
 require_once './app/controllers/jugadores.controller.php';
 require_once './app/controllers/auth.controller.php';
 
-
 define('BASE_URL', '//'.$_SERVER['SERVER_NAME'] . ':' . $_SERVER['SERVER_PORT'] . dirname($_SERVER['PHP_SELF']).'/');
-
 $action = 'home'; // accion por defecto
-if (!empty( $_GET['action'])) {
+if (!empty($_GET['action'])) {
     $action = $_GET['action'];
 }
-
 // home    ->           HomeController->showHome();
 // mostrar jugadores  ->  JugadoresController->showJugadores();
 // mostrar jugadorId  ->  JugadoresController->showJugadorById($id);
@@ -28,7 +25,6 @@ if (!empty( $_GET['action'])) {
 // login ->             authContoller->showLogin();
 // logout ->            authContoller->logout();
 // auth                 authContoller->auth();
-
 $params = explode('/', $action);
 
 switch ($params[0]) {
@@ -44,19 +40,19 @@ switch ($params[0]) {
         $controller = new JugadoresController();
         $controller->showJugadorById($params[1]);
         break;    
-    case 'agregar jugador':
+    case 'agregarJugador':
         $controller = new JugadoresController();
         $controller->addJugador();
         break;
-    case 'eliminar jugador':
+    case 'eliminarJugador':
         $controller = new JugadoresController();
         $controller->removeJugador($params[1]);
         break;
-    case 'form editar jugador':
+    case 'formEditarJugador':
         $controller = new JugadoresController();
         $controller->formEditarJugador($params[1]);
         break;   
-    case 'editar jugador':
+    case 'editarJugador':
         $controller = new JugadoresController();
         $controller->editarJugador($params[1]);
         break;   
@@ -68,19 +64,19 @@ switch ($params[0]) {
         $controller = new EquiposController();
         $controller->showEquipoById($params[1]);
         break;   
-        case 'agregar equipo':
+        case 'agregarEquipo':
         $controller = new EquiposController();
         $controller->addEquipo();
         break;
-    case 'eliminar equipo':
+    case 'eliminarEquipo':
         $controller = new EquiposController();
         $controller->removeEquipo($params[1]);
         break;   
-    case 'form editar equipo':
+    case 'formEditarEquipo':
         $controller = new EquiposController();
         $controller->formEditarEquipo($params[1]);
         break;
-    case 'editar equipo':
+    case 'editarEquipo':
         $controller = new EquiposController();
         $controller->editarEquipo($params[1]);
         break;
@@ -99,5 +95,5 @@ switch ($params[0]) {
     default: 
         echo "404 Page Not Found";
         break;
-}
+} 
 ?>

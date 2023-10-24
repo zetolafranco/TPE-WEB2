@@ -1,7 +1,8 @@
 <?php
 
 class AuthView {
-    function showLogin($error = null) {
-        require_once './templates/login.phtml';
+   public static function showLogin($error = null) {
+        require './templates/login.phtml';
     }
 }
+?>

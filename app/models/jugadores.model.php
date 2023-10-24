@@ -32,9 +32,9 @@ class JugadoresModel {
      * Inserta la tarea en la base de datos
      */
 
-    function insertJugador($Nombre, $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo) {
-        $query = $this->db->prepare('INSERT INTO jugadores (Nombre, Fecha_de_nacimiento, Nacionalidad, Posicion, id_equipo) VALUES(?,?,?,?,?)');
-        $query->execute([$Nombre, $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo]);
+    function insertJugador($nombre, $fecha_de_nacimiento, $nacionalidad, $posicion, $id_equipo) {
+        $query = $this->db->prepare('INSERT INTO jugadores (nombre, fecha_de_nacimiento, nacionalidad, posicion, id_equipo) VALUES(?,?,?,?,?)');
+        $query->execute([$nombre, $fecha_de_nacimiento, $nacionalidad, $posicion, $id_equipo]);
 
         return $this->db->lastInsertId();
     }
@@ -44,9 +44,9 @@ class JugadoresModel {
     $query->execute([$id]);
    }
 
-   function editarJugador($id, $Nombre, $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo){
-    $query = $this->db->prepare('UPDATE jugadores SET nombre = ?, Fecha_de_nacimiento = ?, Nacionalidad = ?, Posicion = ?, id_equipo = ? WHERE id_jugador = ?');    
-    $query->execute([$Nombre,  $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo, $id]);
+   function editarJugador($id, $nombre, $fecha_de_nacimiento, $nacionalidad, $posicion, $id_equipo){
+    $query = $this->db->prepare('UPDATE jugadores SET nombre = ?, fecha_de_nacimiento = ?, nacionalidad = ?, posicion = ?, id_equipo = ? WHERE id_jugador = ?');    
+    $query->execute([$nombre,  $fecha_de_nacimiento, $nacionalidad, $posicion, $id_equipo, $id]);
    }
 
    function removeTodo($id){

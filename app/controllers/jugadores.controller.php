@@ -1,8 +1,8 @@
 <?php
 require_once './app/models/jugadores.model.php';
 require_once './app/views/jugadores.view.php';
-require_once './helpers/auth.helper.php';
-require_once './models/equipos.model.php';
+require_once './app/helpers/auth.helper.php';
+require_once './app/models/equipos.model.php';
 
 class JugadoresController {
     private $model;
@@ -10,7 +10,7 @@ class JugadoresController {
     private $equiposModel;
 
     public function __construct() {
-        AuthHelper::verify();
+     
         $this->model = new JugadoresModel();
         $this->view = new JugadoresView();
         $this->equiposModel = new EquiposModel();
@@ -29,18 +29,18 @@ class JugadoresController {
     
     public function addJugador() {
           AuthHelper::verify();
-          $Nombre = $_POST['Nombre'];
-          $Fecha_de_nacimiento = $_POST['Fecha_de_nacimiento'];
-          $Nacionalidad = $_POST['Nacionalidad'];
-          $Posicion = $_POST['Posicion'];
+          $nombre = $_POST['nombre'];
+          $fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
+          $nacionalidad = $_POST['nacionalidad'];
+          $posicion = $_POST['posicion'];
           $id_equipo = $_POST ['id_equipo'];
           // validaciones
-            if (empty($Nombre) || empty($Fecha_de_nacimiento) || empty($Nacionalidad) || empty($Posicion) || empty($id_equipo)) {
+            if (empty($nombre) || empty($fecha_de_nacimiento) || empty($nacionalidad) || empty($posicion) || empty($id_equipo)) {
               $this->view->showError("Debe completar todos los campos");
               return;
         }
 
-        $id = $this->model->insertJugador($Nombre, $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo);
+        $id = $this->model->insertJugador($nombre, $fecha_de_nacimiento, $nacionalidad, $posicion, $id_equipo);
         if ($id) {
             header('Location: ' . BASE_URL);
         } else {
@@ -62,17 +62,17 @@ class JugadoresController {
     }
     public function editarJugador($id){
         AuthHelper::verify();
-        $Nombre = $_POST['Nombre'];
-        $Fecha_de_nacimiento = $_POST['Fecha_de_nacimiento'];
-        $Nacionalidad = $_POST['Nacionalidad'];
-        $Posicion = $_POST['Posicion'];
+        $nombre = $_POST['nombre'];
+        $fecha_de_nacimiento = $_POST['fecha_de_nacimiento'];
+        $nacionalidad = $_POST['nacionalidad'];
+        $posicion = $_POST['posicion'];
         $id_equipo = $_POST ['id_equipo'];
         // validaciones
-        if (empty($Nombre) || empty($Fecha_de_nacimiento) || empty($Nacionalidad)  || empty($Posicion) || empty($id_equipo)) {
+        if (empty($nombre) || empty($fecha_de_nacimiento) || empty($nacionalidad)  || empty($posicion) || empty($id_equipo)) {
             $this->view->showError("Debe completar todos los campos");
             return;
       }
-                $this->model->editarJugador($Nombre, $Fecha_de_nacimiento, $Nacionalidad, $Posicion, $id_equipo, $id);
+                $this->model->editarJugador($nombre, $fecha_de_nacimiento, $nacionalidad, $posicion, $id_equipo, $id);
                 if ($id) {
                     header('Location: ' . BASE_URL);
                 } else {

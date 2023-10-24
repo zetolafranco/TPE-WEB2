@@ -9,7 +9,7 @@ class EquiposController {
     private $jugadoresModel;
 
     public function __construct() {
-        AuthHelper::verify();
+  
         $this->model = new EquiposModel();
         $this->view = new EquiposView();
         $this->jugadoresModel = new JugadoresModel();
@@ -27,18 +27,18 @@ class EquiposController {
 
     function addEquipo() {
         AuthHelper::verify();
-            $Nombre = $_POST['Nombre'];
-            $Pais = $_POST['Pais'];
-            $Fundacion = $_POST['Fundacion'];
-            $Estadio = $_POST['Estadio'];
-            $Entrenador = $_POST['Entrenador'];
+            $nombre = $_POST['nombre'];
+            $pais = $_POST['pais'];
+            $fundacion = $_POST['fundacion'];
+            $estadio = $_POST['estadio'];
+            $entrenador = $_POST['entrenador'];
 
-        if (empty($Nombre) || empty($Pais) || empty($Fundacion) || empty($Estadio) || empty($Entrenador)) {
+        if (empty($nombre) || empty($pais) || empty($fundacion) || empty($estadio) || empty($entrenador)) {
             $this->view->showError("Debe completar todos los campos");
             return;
         }
 
-        $id = $this->model->insertEquipo($Nombre, $Pais, $Fundacion, $Estadio, $Entrenador);
+        $id = $this->model->insertEquipo($nombre, $pais, $fundacion, $estadio, $entrenador);
         if ($id) {
             header('Location: ' . BASE_URL);
         } else {
@@ -88,3 +88,4 @@ class EquiposController {
             }
         }
     }
+?>
