@@ -11,8 +11,8 @@ require 'templates/form_jugador.phtml'; ?>
 <div class="col-md-7 order-md-2">
 <?php foreach($jugadores as $jugador): ?>
     <h2 class="nombre-jugador"><?= $jugador->nombre ?></h2>
-    <p class="nombre-equipo">Equipo:<?= $jugador->nombre_equipo ?></p>
-    <a href="<?php echo BASE_URL . 'jugador/' . $jugador->id_jugador; ?>" class="btn btn-primary btn-sm">Ver Detalle</a>
+    <p>Equipo:<?= $jugador->id_equipo ?></p>
+    <a href="jugadorInfo/<?= $jugador->nombre_equipo; ?>" class="btn btn-primary btn-sm">Ver Detalle</a>
     <?php if (isset($_SESSION['USER_ID'])) : ?>
               <a href="deleteJugador/<?= $jugador->id_jugador ?>" class='btn btn-danger ml-auto'>Borrar</a>
               <a href="formEditarJugador/<?= $jugador->id_jugador ?>" type="button" class='btn btn-success ml-auto'>Editar</a>
